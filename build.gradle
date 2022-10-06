@@ -5,6 +5,18 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 apply plugin: 'eclipse'
 
+plugins {
+  id "org.sonarqube" version "3.4.0.2513"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "equipe6_opencms-core"
+    property "sonar.organization", "equipe6"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
+
 buildscript {
     dependencies {
         classpath group: "com.liferay", name: "com.liferay.gradle.plugins.tlddoc.builder", version: "1.3.0"
